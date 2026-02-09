@@ -1,14 +1,42 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useGameState } from "@/hooks/useGameState";
+import StartScreen from "@/components/game/StartScreen";
+import GameScreen from "@/components/game/GameScreen";
+import WinScreen from "@/components/game/WinScreen";
+import LoseScreen from "@/components/game/LoseScreen";
 
 const Index = () => {
-  return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
-  );
+  const {
+    phase,
+    mistakes,
+    connectedSlots,
+    currentSlotIndex,
+    pipeX,
+    flashError,
+    flashSuccess,
+    startGame,
+    handleTap,
+  } = useGameState();
+
+  switch (phase) {
+    case "start":
+      return <StartScreen onPlay={startGame} />;
+    case "playing":
+      return (
+        <GameScreen
+          mistakes={mistakes}
+          connectedSlots={connectedSlots}
+          currentSlotIndex={currentSlotIndex}
+          pipeX={pipeX}
+          flashError={flashError}
+          flashSuccess={flashSuccess}
+          onTap={handleTap}
+        />
+      );
+    case "won":
+      return <WinScreen connectedSlots={connectedSlots} onPlayAgain={startGame} />;
+    case "lost":
+      return <LoseScreen onRetry={startGame} />;
+  }
 };
 
 export default Index;

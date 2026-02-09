@@ -17,8 +17,11 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 47 92% 53%;
+    --primary-foreground: 0 0% 0%;
+    
+    --water: 197 100% 44%;
+    --water-foreground: 0 0% 100%;
 
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
@@ -102,4 +105,20 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground;
   }
+}
+
+@keyframes water-flow {
+  0% {
+    stroke-dashoffset: 40;
+    opacity: 0.5;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
+.animate-water-flow {
+  stroke-dasharray: 8 4;
+  animation: water-flow 1s linear infinite;
 }
