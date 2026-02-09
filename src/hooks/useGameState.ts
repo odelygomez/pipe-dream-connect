@@ -3,9 +3,9 @@ import { useState, useRef, useCallback, useEffect } from "react";
 export type GamePhase = "start" | "playing" | "won" | "lost";
 
 const SLOT_COUNT = 5;
-const BASE_SPEED = 2.5; // pixels per frame
-const SPEED_INCREMENT = 0.4;
-const HIT_TOLERANCE = 12; // % tolerance for correct alignment
+const BASE_SPEED = 1.2;
+const SPEED_INCREMENT = 0.2;
+const HIT_TOLERANCE = 14;
 
 export interface SlotPosition {
   x: number;
