@@ -1,4 +1,5 @@
 import GameArea from "./GameArea";
+import TapFeedback from "./TapFeedback";
 
 interface GameScreenProps {
   mistakes: number;
@@ -27,7 +28,7 @@ export default function GameScreen({
 }: GameScreenProps) {
   return (
     <div
-      className="flex flex-col min-h-[100dvh] bg-background select-none cursor-pointer"
+      className="relative flex flex-col min-h-[100dvh] bg-background select-none cursor-pointer"
       onClick={onTap}
       onTouchStart={(e) => {
         e.preventDefault();
@@ -57,6 +58,9 @@ export default function GameScreen({
           showWaterFlow={false}
         />
       </div>
+
+      {/* Tap feedback */}
+      <TapFeedback flashSuccess={flashSuccess} flashError={flashError} />
 
       {/* Tap hint */}
       <div className="text-center pb-6">
