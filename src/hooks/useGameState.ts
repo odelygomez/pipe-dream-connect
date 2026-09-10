@@ -63,6 +63,8 @@ export function useGameState() {
     pipeXRef.current = 5;
     directionRef.current = 1;
     speedRef.current = BASE_SPEED;
+    lockedRef.current = false;
+    lastTapRef.current = 0;
     setPipeX(5);
     setFlashError(false);
     setFlashSuccess(false);
