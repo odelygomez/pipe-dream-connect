@@ -51,7 +51,7 @@ This project helped me practice:
 
 ## 🚀 Live Demo
 
-Coming soon.
+🎮 [Play Pipe Connect](https://water-link-tap.lovable.app)
 
 ## 📌 Project Status
 
