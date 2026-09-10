@@ -83,6 +83,7 @@ export function useGameState() {
     if (distance <= HIT_TOLERANCE) {
       // Correct!
       cancelAnimationFrame(animRef.current);
+      lockedRef.current = true;
       setFlashSuccess(true);
       setTimeout(() => setFlashSuccess(false), 300);
 
