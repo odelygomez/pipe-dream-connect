@@ -3,9 +3,10 @@ import { useState, useRef, useCallback, useEffect } from "react";
 export type GamePhase = "start" | "playing" | "won" | "lost";
 
 const SLOT_COUNT = 5;
-const BASE_SPEED = 1.2;
-const SPEED_INCREMENT = 0.2;
-const HIT_TOLERANCE = 14;
+const BASE_SPEED = 0.9;
+const SPEED_INCREMENT = 0.1;
+const HIT_TOLERANCE = 18;
+const TAP_COOLDOWN_MS = 250;
 
 export interface SlotPosition {
   x: number;
