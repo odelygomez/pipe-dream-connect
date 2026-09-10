@@ -105,8 +105,10 @@ export function useGameState() {
 
       // Resume after brief pause
       setTimeout(() => {
+        lockedRef.current = false;
+        lastTapRef.current = Date.now();
         animRef.current = requestAnimationFrame(animate);
-      }, 400);
+      }, 500);
     } else {
       // Mistake
       setFlashError(true);
