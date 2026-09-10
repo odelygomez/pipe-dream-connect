@@ -1,10 +1,10 @@
-# 💧 Pipe Dream Connect
+# 💧 Pipe Connect
 
 An interactive timing game inspired by charity: water, built as an AI-assisted development project using Lovable.
 
 ## 🎮 About the Project
 
-Pipe Dream Connect is a simple browser-based timing game where players must tap at the right moment to connect moving pipe sections and help deliver clean water to a village.
+Pipe Connect is a simple browser-based timing game where players must tap at the right moment to connect moving pipe sections and help deliver clean water to a village.
 
 The project was created to explore AI-assisted development and learn how an idea can be transformed into a functional web application through prompting, testing, debugging, and iteration.
 
