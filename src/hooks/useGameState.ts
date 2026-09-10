@@ -37,6 +37,8 @@ export function useGameState() {
   const directionRef = useRef(1);
   const pipeXRef = useRef(0);
   const speedRef = useRef(BASE_SPEED);
+  const lockedRef = useRef(false);
+  const lastTapRef = useRef(0);
 
   const currentTarget = SLOT_POSITIONS[currentSlotIndex]?.x ?? 50;
 
