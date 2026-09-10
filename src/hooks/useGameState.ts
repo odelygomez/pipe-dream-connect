@@ -72,6 +72,11 @@ export function useGameState() {
 
   const handleTap = useCallback(() => {
     if (phase !== "playing") return;
+    // Ignore taps while the pipe is locking in, and debounce rapid double-taps
+    if (lockedRef.current) return;
+    const now = Date.now();
+    if (now - lastTapRef.current < TAP_COOLDOWN_MS) return;
+    lastTapRef.current = now;
 
     const distance = Math.abs(pipeXRef.current - currentTarget);
 
