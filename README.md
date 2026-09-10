@@ -1,73 +1,58 @@
-# Welcome to your Lovable project
+# 💧 Pipe Dream Connect
 
-## Project info
+An interactive timing game inspired by charity: water, built as an AI-assisted development project using Lovable.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## 🎮 About the Project
 
-## How can I edit this code?
+Pipe Dream Connect is a simple browser-based timing game where players must tap at the right moment to connect moving pipe sections and help deliver clean water to a village.
 
-There are several ways of editing your application.
+The project was created to explore AI-assisted development and learn how an idea can be transformed into a functional web application through prompting, testing, debugging, and iteration.
 
-**Use Lovable**
+## ✨ Features
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+- Interactive timing-based gameplay
+- Progressive pipe connection system
+- Success and mistake feedback
+- Win and lose states
+- Replay functionality
+- Responsive browser-based interface
 
-Changes made via Lovable will be committed automatically to this repo.
+## 🛠️ Tech Stack
 
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
 - React
-- shadcn-ui
+- TypeScript
+- Vite
 - Tailwind CSS
+- shadcn/ui
+- Lovable
 
-## How can I deploy this project?
+## 🧠 Development Process
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+This project was built using an AI-assisted development workflow with Lovable.
 
-## Can I connect a custom domain to my Lovable project?
+My process included:
 
-Yes, you can!
+1. Defining the game concept and desired user experience
+2. Building the initial application through natural-language prompts
+3. Testing the gameplay and identifying usability issues
+4. Adjusting game behavior and timing
+5. Adding visual feedback for successful and missed interactions
+6. Iterating on the application based on testing
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## 💡 What I Learned
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+This project helped me practice:
+
+- AI-assisted development and vibe coding
+- Translating ideas into functional requirements
+- Iterative testing and debugging
+- Understanding the structure of a React/TypeScript project
+- GitHub repositories and version control workflows
+
+## 🚀 Live Demo
+
+Coming soon.
+
+## 📌 Project Status
+
+Active learning project — additional improvements may be added as I continue developing and testing the application. 
