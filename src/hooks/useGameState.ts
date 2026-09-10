@@ -3,9 +3,10 @@ import { useState, useRef, useCallback, useEffect } from "react";
 export type GamePhase = "start" | "playing" | "won" | "lost";
 
 const SLOT_COUNT = 5;
-const BASE_SPEED = 1.2;
-const SPEED_INCREMENT = 0.2;
-const HIT_TOLERANCE = 14;
+const BASE_SPEED = 0.9;
+const SPEED_INCREMENT = 0.1;
+const HIT_TOLERANCE = 18;
+const TAP_COOLDOWN_MS = 250;
 
 export interface SlotPosition {
   x: number;
@@ -36,6 +37,8 @@ export function useGameState() {
   const directionRef = useRef(1);
   const pipeXRef = useRef(0);
   const speedRef = useRef(BASE_SPEED);
+  const lockedRef = useRef(false);
+  const lastTapRef = useRef(0);
 
   const currentTarget = SLOT_POSITIONS[currentSlotIndex]?.x ?? 50;
 
@@ -60,6 +63,8 @@ export function useGameState() {
     pipeXRef.current = 5;
     directionRef.current = 1;
     speedRef.current = BASE_SPEED;
+    lockedRef.current = false;
+    lastTapRef.current = 0;
     setPipeX(5);
     setFlashError(false);
     setFlashSuccess(false);
@@ -67,12 +72,18 @@ export function useGameState() {
 
   const handleTap = useCallback(() => {
     if (phase !== "playing") return;
+    // Ignore taps while the pipe is locking in, and debounce rapid double-taps
+    if (lockedRef.current) return;
+    const now = Date.now();
+    if (now - lastTapRef.current < TAP_COOLDOWN_MS) return;
+    lastTapRef.current = now;
 
     const distance = Math.abs(pipeXRef.current - currentTarget);
 
     if (distance <= HIT_TOLERANCE) {
       // Correct!
       cancelAnimationFrame(animRef.current);
+      lockedRef.current = true;
       setFlashSuccess(true);
       setTimeout(() => setFlashSuccess(false), 300);
 
@@ -94,8 +105,10 @@ export function useGameState() {
 
       // Resume after brief pause
       setTimeout(() => {
+        lockedRef.current = false;
+        lastTapRef.current = Date.now();
         animRef.current = requestAnimationFrame(animate);
-      }, 400);
+      }, 500);
     } else {
       // Mistake
       setFlashError(true);
